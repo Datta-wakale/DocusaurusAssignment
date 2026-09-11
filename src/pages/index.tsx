@@ -49,7 +49,6 @@ export default function Home(): ReactNode {
       <main>
           <CapabilityFilter capabilities={CAPABILITIES} />
         <HomepageFeatures />
-          
       </main>
     </Layout>
   );
