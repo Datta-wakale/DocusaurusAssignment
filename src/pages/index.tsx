@@ -5,10 +5,19 @@ import useDocusaurusContext from '@docusaurus/useDocusaurusContext';
 import Layout from '@theme/Layout';
 import HomepageFeatures from '@site/src/components/HomepageFeatures';
 import Heading from '@theme/Heading';
-
+import CapabilityFilter from '../components/CapabilityFilter';
 import styles from './index.module.css';
 
+  const CAPABILITIES = [
+  { id: 'bq',   title: 'BigQuery Datasets' },
+  { id: 'gcs',  title: 'GCS Buckets' },
+  { id: 'iam',  title: 'Service Accounts (IAM)' },
+  { id: 'dbt',  title: 'dbt Transformations' },
+  { id: 'air',  title: 'Airflow DAGs' },
+  { id: 'look', title: 'Looker Dashboards' },
+];
 function HomepageHeader() {
+
   const {siteConfig} = useDocusaurusContext();
   return (
     <header className={clsx('hero hero--primary', styles.heroBanner)}>
@@ -25,6 +34,7 @@ function HomepageHeader() {
           </Link>
         </div>
       </div>
+   
     </header>
   );
 }
@@ -37,7 +47,9 @@ export default function Home(): ReactNode {
       description="Description will go into a meta tag in <head />">
       <HomepageHeader />
       <main>
+          <CapabilityFilter capabilities={CAPABILITIES} />
         <HomepageFeatures />
+          
       </main>
     </Layout>
   );

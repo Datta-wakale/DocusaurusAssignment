@@ -2,9 +2,23 @@
 sidebar_position: 1
 ---
 
+import CapabilityFilter  from "@site/src/components/CapabilityFilter"
+
 # Manage Docs Versions
 
 Docusaurus can manage multiple versions of your docs.
+
+## Live Capabilities Search
+Here is a list of the system capabilities:
+
+<CapabilityFilter capabilities={[
+  { id: 'bq',   title: 'BigQuery Datasets' },
+  { id: 'gcs',  title: 'GCS Buckets' },
+  { id: 'iam',  title: 'Service Accounts (IAM)' },
+  { id: 'dbt',  title: 'dbt Transformations' },
+  { id: 'air',  title: 'Airflow DAGs' },
+  { id: 'look', title: 'Looker Dashboards' }
+]} />
 
 ## Create a docs version
 
