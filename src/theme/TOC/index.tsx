@@ -1,34 +1,36 @@
-import React, { useEffect } from 'react';
+import React, {useState, type ReactNode} from 'react';
 import TOC from '@theme-original/TOC';
+import type TOCType from '@theme/TOC';
+import type {WrapperProps} from '@docusaurus/types';
 
-export default function TOCWrapper(
-  props: React.ComponentProps<typeof TOC>,
-) {
-  useEffect(() => {
-    const toc = document.querySelector('.table-of-contents');
+type Props = WrapperProps<typeof TOCType>;
 
-    if (!toc) {
-      return;
-    }
+export default function TOCWrapper(props: Props): ReactNode {
 
-    const links = toc.querySelectorAll<HTMLAnchorElement>(
-      'a[href^="#"]',
-    );
+  const [feedback, setFeedback] = useState<"yes" | "no" | null>(null);
 
-    links.forEach((link) => {
-      const href = link.getAttribute('href');
+  return (
+    <>
+      <TOC {...props} />
+      <hr />
+      <div>
+        {feedback === null ? (
+          <>
+            <p>Was this page helpful?</p>
+            <button onClick={() => setFeedback("yes")}>
+               Yes
+            </button>
 
-      if (!href) {
-        return;
-      }
-
-      const id = decodeURIComponent(href.slice(1));
-
-      if (!document.getElementById(id)) {
-        link.closest('li')?.remove();
-      }
-    });
-  }, []);
-
-  return <TOC {...props} />;
+            <button onClick={() => setFeedback("no")}>
+               No
+            </button>
+          </>
+        ) : feedback === "yes" ? (
+          <p>Thank you for your feedback! </p>
+        ) : (
+          <p>Thank you for your feedback, We will improve!</p>
+        )}
+      </div>
+    </>
+  );
 }

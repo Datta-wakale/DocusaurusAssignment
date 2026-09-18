@@ -20,6 +20,6 @@ export default function ClientOnlyBlock({
   if (!ready || !enabled) {
     return null;
   }
-
-  return <>{children}</>;
+  // return the children
+  return <>{children}</>
 }
