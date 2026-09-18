@@ -20,4 +20,4 @@ Usage instructions.
 
 ## API
 
-API information.
+API Information
