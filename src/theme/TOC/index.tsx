@@ -29,7 +29,7 @@ export default function TOCWrapper(props: Props): ReactNode {
         ) : feedback === "yes" ? (
           <p>Thank you for your feedback! </p>
         ) : (
-          <p>Thank you for your feedback , We will improve!</p>
+          <p>Thank you for your feedback! we will improve it!</p>
         )}
       </div>
     </>
