@@ -33,8 +33,7 @@ export default function CapabilityFilter({
   const normalizedQuery = query.trim().toLowerCase();
 
   const hasMatches = capabilities.some((capability) =>
-    capability.title.toLowerCase().includes(normalizedQuery)
-  );
+    capability.title.toLowerCase().includes(normalizedQuery));
 
   const showNoResults = normalizedQuery !== '' && !hasMatches;
 
