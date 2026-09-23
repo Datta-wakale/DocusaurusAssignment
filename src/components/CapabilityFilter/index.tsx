@@ -11,8 +11,7 @@ type CapabilityFilterProps = {
 };
 
 export default function CapabilityFilter({
-  capabilities,
-}: CapabilityFilterProps) {
+  capabilities,}: CapabilityFilterProps) {
   const [query, setQuery] = useState('');
 
   const filteredCapabilities = useMemo(() => {
