@@ -9,6 +9,18 @@ const config: Config = {
   tagline: 'Dinosaurs are cool',
   favicon: 'img/favicon.ico',
 
+  customFields : {
+      primeTemporaryContent : {
+          enabled : true,
+          description : "Custom Fields with the content",
+          sectionContent : "Custom Feilds Section content applies here"
+      },
+      siteMaintainanceFeature : {
+          enabled : true,
+          message : "This site is under Maintance",
+          description : "When We Will Finish Our Maintainace u Will Get Notification"
+      }
+  },
   // Future flags, see https://docusaurus.io/docs/api/docusaurus-config#future
   future: {
     v4: true, // Improve compatibility with the upcoming Docusaurus v4

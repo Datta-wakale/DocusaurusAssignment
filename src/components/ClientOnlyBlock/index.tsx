@@ -23,5 +23,5 @@ export default function ClientOnlyBlock({
 
   // return the children
   return <>{children}</>
- 
+  
 }
